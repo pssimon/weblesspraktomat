@@ -45,6 +45,8 @@ $^O =~ /win/ && die 	"This program has _not_ been tested under windows. It uses 
 			"directly creates paths, and probably does other evil foodoo, that won't\n".
 			"work with legacy OS's. You should consider upgrading.\n";
 
+
+# I'm afraid for now, my perl is write-only, I might fix this up a bit if I come around to doing it ... I don't know yet though.
 my $mech = WWW::Mechanize->new();
 $mech->credentials( $username => $password );
 

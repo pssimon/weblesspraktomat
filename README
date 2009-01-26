@@ -8,28 +8,28 @@ README zu weblesspraktomat.pl
 
 Was ist das?
 
-  Webless Praktomat ist ein kleine perl-skript, das es erlaubt
+  Webless Praktomat ist ein kleines perl-skript, das es erlaubt
   die abgegeben Aufgaben von Tutanten direkt in ein Verzeichnis
   herunterzuladen. Dann kann man die Dateien direkt editieren,
   ohne an ein Webinterface gebunden zu sein. Das Skript legt
-  ausserdem Dateien an, die den Feldern die man als Tutor 
-  ausfüllen kann entsprechen. Desweiteren kann man die korregierten
-  Dateien wieder hochladen.
+  außerdem Dateien an, die den Feldern die man als Tutor 
+  ausfüllen kann entsprechen. Des weiteren kann man die korrigierten
+  Dateien wieder hoch laden.
 
 Wozu?
 
-  Mit diesem Tool kann man ohne Browser die Aufgaben korregieren.
-  Das Einfügen der Kommentare, korregieren mit dem textfeld auf der 
-  Seite ist meiner Meinung nach  nangenehm. Hiermit kann man die
+  Mit diesem Tool kann man ohne Browser die Aufgaben korrigieren.
+  Das Einfügen der Kommentare, korregieren mit dem Textfeld auf der 
+  Seite ist meiner Meinung nach unangenehm. Hiermit kann man die
   Aufgaben korregieren, ganz ohne das.
 
 Disclaimer
 
   GANZ GROßGESCHRIEBEN:  Ich über nehme KEINE Verantwortung über das
-  was das Skript tut. Auch wenn das skript grundsätzlich nicht so 
-  geschrieben ist das es Testate etwa Freigeben könnte, so ist nicht
+  was das Skript tut. Auch wenn das Skript grundsätzlich nicht so 
+  geschrieben ist das es Testate etwa freigeben könnte, so ist nicht
   sichergestellt, dass sich Praktomat nicht ändert. Mit all dem gesagt:
-  bei mir hats noch keinen mist gebaut.
+  bei mir hats noch keinen Mist gebaut.
 
 Status
 
@@ -73,6 +73,11 @@ Kontakt
   Bugmeldungen, Verbesserungvorschläge, Lob- und Haßmails bitte an
  	 ps@k0de.de
 
+FAQ (or potential faq)
+	
+  Fehler: Can't locate WWW/Mechanize.pm in @INC  ...
+  Lösung: Bei debian paket "libwww-mechanize-perl" installieren, generell (als root): 
+  perl -MCPAN -e "install WWW::Mechanize"
 
 Schnellstart (für ungeduldige):
 	- .pl datei editieren, optionen einstellen
