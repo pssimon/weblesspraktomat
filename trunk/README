@@ -1,0 +1,93 @@
+README zu weblesspraktomat.pl 
+-----------------------------
+(c) 2009 Simon Stroh <ps@k0de.de>
+
+
+    -- Quickstart (für ungeduldige) steht ganz unten --
+
+
+Was ist das?
+
+  Webless Praktomat ist ein kleines perl-skript, das es erlaubt
+  die abgegeben Aufgaben von Tutanten direkt in ein Verzeichnis
+  herunterzuladen. Dann kann man die Dateien direkt editieren,
+  ohne an ein Webinterface gebunden zu sein. Das Skript legt
+  außerdem Dateien an, die den Feldern die man als Tutor 
+  ausfüllen kann entsprechen. Des weiteren kann man die korrigierten
+  Dateien wieder hoch laden.
+
+Wozu?
+
+  Mit diesem Tool kann man ohne Browser die Aufgaben korrigieren.
+  Das Einfügen der Kommentare, korregieren mit dem Textfeld auf der 
+  Seite ist meiner Meinung nach unangenehm. Hiermit kann man die
+  Aufgaben korregieren, ganz ohne das.
+
+Disclaimer
+
+  GANZ GROßGESCHRIEBEN:  Ich über nehme KEINE Verantwortung über das
+  was das Skript tut. Auch wenn das Skript grundsätzlich nicht so 
+  geschrieben ist das es Testate etwa freigeben könnte, so ist nicht
+  sichergestellt, dass sich Praktomat nicht ändert. Mit all dem gesagt:
+  bei mir hats noch keinen Mist gebaut.
+
+Status
+
+  Das Programm befindet sich noch in der dirty-little-perl-hack
+  Kategorie und ist weit von "production" entfernt. Wenn es dir 
+  etwas bringt, schreib mir eine mail. Wenns genug Leute interessiert
+  mach ich weiter was daran :-)
+  
+Funktionalität
+
+  Das Programm hat drei Modi:
+
+    Starten
+      Hier startet das Program das testieren der Aufgabe die als
+      zusätzlicher Parameter angegeben wird für alle Matrikelnummern
+      die im Quelltext stehen. Dies entspricht dem eingeben von
+      der Daten auf der "konkrete lösung testieren" Seite.
+
+      Aufruf: perl weblesspraktomat.pl start <Aufgabennnummer>
+
+    Hohlen
+      Hier downloaded das Programm alle Aufgaben die gerde von
+      dem angemeldeten User testiert werden in das Data verzeichnis.
+      format: dataverzeichnis/matrikelnummer/aufgabe/dateien
+      Dabei werden zusätzlich Dateien angelegt die mit "_" anfangen.
+      Diese repräsentieren die Felder die man ausfüllen kann.
+
+      Aufruf: perl weblesspraktomat.pl get
+
+    Hochladen
+      Hier uploaded das Programm die Felder der einzelnen aufgaben
+      die in den "_"-Dateien verändert wurden, und speichert diese
+      bei Proaktomat. Das Programm gibt die Testate nicht frei, dass
+      muss man nach wie vor über die Webseite machen. Weiterhin wird
+      empfohlen vor dem Freigeben die Testate nochmals zu kontrollieren.
+      
+      Aufruf: perl weblesspraktomat.pl put
+
+Kontakt
+  
+  Bugmeldungen, Verbesserungvorschläge, Lob- und Haßmails bitte an
+ 	 ps@k0de.de
+
+FAQ (or potential faq)
+	
+  Fehler: Can't locate WWW/Mechanize.pm in @INC  ...
+  Lösung: Bei debian paket "libwww-mechanize-perl" installieren, generell (als root): 
+  perl -MCPAN -e "install WWW::Mechanize"
+
+Schnellstart (für ungeduldige):
+	- .pl datei editieren, optionen einstellen
+	- perl weblesspraktomat.pl start 10
+		Started das Testieren der aufgabe 10
+	- perl weblesspraktomat.pl get
+		Lädt die lösungen ins data dir runter
+	- Dateien editieren, die die mit "_" anfangen, sind 
+	  die speziellen dateien die später in die Felder kommen.
+	- perl weblesspraktomat.pl put
+		Felder + Einträge wieder hochladen
+	- Auf der webseite Testate überprüfen + Freigeben.
+
