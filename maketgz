@@ -1,9 +1,0 @@
-#!/bin/bash
-
-mkdir webless-praktomat
-cp -rv * webless-praktomat
-rm -rf webless-praktomat/.svn
-rm -rf webless-praktomat/data/.svn
-rm -rf webless-praktomat/maketgz
-tar -czf webless-praktomat.tgz webless-praktomat
-rm -rf webless-praktomat
