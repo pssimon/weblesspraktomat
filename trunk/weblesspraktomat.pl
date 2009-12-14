@@ -144,7 +144,7 @@ sub download_testing {
         my @list = content_split( $textarea->{value} );
 
         for my $file (@list) {
-            open( my $output, ">",
+            open( my $output, ">:utf8",
                 $datadir . "/" . $matnr . "/" . $task . "/" . $file->[0] )
               || die $!;
             print $output $file->[1];
@@ -167,7 +167,7 @@ sub field_to_file {
     my $field_name = shift;
     my $form       = shift;
     my $file       = shift;
-    open( my $output, ">", $file ) || die $!;
+    open( my $output, ">:utf8", $file ) || die $!;
     my ($field) =
       grep { $_->name() eq $field_name } @{ $form->{inputs} };
     print $output $field->{value};
@@ -216,7 +216,7 @@ sub content_split {
 # Read in a whole file in one gulp
 sub slurp {
     my $filename = shift;
-    open( my $in, "<", $filename ) || die $! . " $filename\n";
+    open( my $in, "<:utf8", $filename ) || die $! . " $filename\n";
     my $cont = do { local $/; <$in> };
     close $in;
     return $cont;
